@@ -1,0 +1,56 @@
+#intro{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .section-container-special{
+    @include md{
+      display: grid;
+      grid-template-columns: 90% 10%;
+      grid-template-areas: "content .";
+      padding: 0;
+    }
+    @include xl{
+      padding: 0;
+      grid-template-columns: 80% 20%;
+    }
+    .content-container{
+      grid-area: content;
+      @include md{
+        display: grid;
+        grid-template-columns: 45% 45% 5% 5%;
+        grid-template-areas: "head head head ." "para paraTwo . .";
+        grid-gap: 25px;
+        border-top: 10px solid $green;
+        border-left: none;
+        border-bottom: 10px solid $green;
+        border-right: 10px solid $green;
+        border-radius: 0 25px 25px 0;
+        padding: 50px;
+      }
+      @include xl{
+        grid-template-columns: 40% 40% 15% 15%;
+        grid-template-areas: "head head . ." "para paraTwo . .";
+        grid-gap: 50px;
+        padding: 50px 100px 50px 50px;
+      }
+      h1{
+        // margin-bottom: 50px;
+        grid-area: head;
+      }
+      p{
+        grid-area: para;
+        padding-top: 25px;
+        @include md{
+          padding-top: 0;
+        }
+        &:nth-child(3){
+          grid-area: paraTwo;
+        }
+      }
+    }
+  }
+}

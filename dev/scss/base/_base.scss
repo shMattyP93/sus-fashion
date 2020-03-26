@@ -1,0 +1,153 @@
+/* =============
+    Base
+============= */
+figure{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    li{
+        list-style: none;
+    }
+}
+
+.section-container-special{
+  padding: 50px 50px 50px 25px;
+  @include md{
+    padding: 100px 50px;
+  }
+  @include xl{
+    padding: 100px;
+  }
+}
+
+.section-container{
+  padding: 25px;
+  @include md{
+    padding: 100px 50px;
+  }
+  @include xl{
+    padding: 100px;
+  }
+}
+
+.section{
+  background-color: $dark;
+  // max-width: 1280px;
+  // margin: 0 auto;
+}
+
+.radio-container{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 25px;
+  .radio-content{
+    display: flex;
+    height: 45px;
+    z-index: 100;
+    padding: 10px 0 10px 0;
+    align-items: center;
+    border-radius: 12.5px;
+    border: 5px solid $purple;
+    .radio-title{
+      background-color: $purple;
+      height: 100%;
+      width: 75%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      @include md{
+        width: 70%;
+      }
+      @include xl{
+        width: 75%;
+      }
+      h3{
+
+      }
+    }
+    .radio-button-conatiner{
+      padding-left: 15px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      box-sizing: border-box;
+      height: 100%;
+      padding: 5px;
+      .pretty{
+        margin: 0;
+        top: 30px;
+        @include md{
+          left: 3px;
+        }
+        @include xl{
+          left: 6px;
+        }
+        input[type=checkbox]{
+          top: -30px;
+        }
+      }
+    }
+  }
+}
+
+.svg-container{
+  position: relative;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px 0 25px;
+  @include md{
+    padding: 0 50px 0 50px;
+  }
+  @include xl{
+    padding: 0 100px 0 100px;
+  }
+  svg{
+    position: absolute;
+    @include xl{
+      width: 60%;
+    }
+  }
+}
+
+#data-two-second{
+  div{
+    .svg-container{
+      svg{
+        transform: rotate(90deg);
+        @include md{
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+}
+
+#data-four-second{
+  div{
+    .svg-container{
+      transform-origin: center;
+      transform: scale(0.85)
+    }
+  }
+}
+
+#pp-nav span, .pp-slidesNav span{
+  border: 1px solid $green !important;
+}
+
+#pp-nav li .active span, .pp-slidesNav .active span{
+  background-color: $purple;
+}
+
+#pp-nav{
+  display: none;
+  @include md{
+    display: block;
+  }
+}

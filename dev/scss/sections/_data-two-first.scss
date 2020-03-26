@@ -1,0 +1,47 @@
+#data-two-first{
+  max-width: 1300px;
+  margin: 0 auto;
+  .section-container{
+    @include md{
+      display: grid;
+      grid-template-columns: 80% 20%;
+      grid-template-areas: "intro ." "radio .";
+    }
+    @include xl{
+      grid-template-columns: 40% 60%;
+      grid-template-areas: "intro radio";
+      grid-gap: 50px;
+    }
+    .section-content{
+      grid-area: intro;
+      padding-bottom: 50px;
+      h1{
+        padding-bottom: 25px;
+      }
+      p{
+        &:nth-child(3){
+          display: none;
+          @include md{
+            display: block;
+            margin-top: 25px;
+          }
+        }
+      }
+    }
+    .content-container{
+      grid-area: radio;
+      border: 10px solid $green;
+      padding: 12.5px;
+      border-radius: 25px;
+      @include md{
+        padding: 50px;
+      }
+      h2{
+        padding-bottom: 25px;
+        @include xl{
+          text-align: left;
+        }
+      }
+    }
+  }
+}
